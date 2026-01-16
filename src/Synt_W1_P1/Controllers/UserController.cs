@@ -26,7 +26,7 @@ namespace Synt_W1_P1.Controllers
             return Ok(users);
         }
 
-        [HttpGet("user/{id}")]
+        [HttpGet("get_user/{id}")]
         public async Task<ActionResult> GetUser(int id)
         {
             var user = await _userService.GetUserAsync(id);
@@ -37,7 +37,7 @@ namespace Synt_W1_P1.Controllers
             return Ok(user);
         }
 
-        [HttpPost("add")]
+        [HttpPost("add_user")]
         public async Task<ActionResult> AddUser([FromBody] User user)
         {
             var createdUser = await _userService.AddUser(user);
@@ -49,7 +49,7 @@ namespace Synt_W1_P1.Controllers
 
         }
 
-        [HttpPut("edit/{id}")]
+        [HttpPut("edit_user/{id}")]
         public async Task<ActionResult> UpdateUser(int id, [FromBody] User user)
         {
             var updatedUser = await _userService.UpdateUser(id, user);
@@ -60,7 +60,7 @@ namespace Synt_W1_P1.Controllers
             return Ok(updatedUser);
         }
 
-        [HttpDelete("delete/{id}")]
+        [HttpDelete("delete_user/{id}")]
         public async Task<ActionResult> DeleteUser(int id)
         {
             var deleted = await _userService.DeleteUser(id);

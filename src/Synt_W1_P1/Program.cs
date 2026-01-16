@@ -1,7 +1,10 @@
 
 using Microsoft.EntityFrameworkCore;
 using Synt_W1_P1.Infrastructure;
+using Synt_W1_P1.Interfaces;
 using Synt_W1_P1.Options;
+using Synt_W1_P1.Repository;
+using Synt_W1_P1.Services.Users;
 using Synt_W1_P1.Services.UserService;
 
 namespace Synt_W1_P1
@@ -26,6 +29,8 @@ namespace Synt_W1_P1
             );
 
             builder.Services.AddScoped<UserService>();
+            builder.Services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
+            builder.Services.AddScoped<IUserRepository, UserRepository>();
 
             var app = builder.Build();
 

@@ -1,3 +1,9 @@
 <Solution>
-  <Project Path="Synt_W1_P1/Synt_W1_P1.csproj" />
+  <Folder Name="/src/">
+    <Project Path="src/Synt_W1_P1/Synt_W1_P1.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="ContractTests/ContractTests.csproj" Id="78bf12aa-2b67-4b35-8b8e-9e568d0ad5a7" />
+    <Project Path="tests/Synt_P1_W1.Tests/Synt_P1_W1.Tests.csproj" />
+  </Folder>
 </Solution>
